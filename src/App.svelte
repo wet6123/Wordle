@@ -1,8 +1,13 @@
 <script>
+	import { fade, fly } from 'svelte/transition';
+	import KeyItem from './components/KeyItem.svelte';
+	import Keys from './components/Keys.svelte';
+
+
 	let key = "";
 	let largeKey;
 	let keyCode;
-	let keys = [""];
+	let keys = ["ABCDE"];
 	let cnt = 0;
 
 	function handleKeydown(event) {
@@ -31,41 +36,24 @@
 		}
 	}
 
+	function checker(event){
+
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
 
 <main>
 	<div >
-		{#each keys as key}
 		<div class = "tiles">
-			<div class="tile">{key.charAt(0).toUpperCase()}</div>
-			<div class="tile">{key.charAt(1).toUpperCase()}</div>
-			<div class="tile">{key.charAt(2).toUpperCase()}</div>
-			<div class="tile">{key.charAt(3).toUpperCase()}</div>
-			<div class="tile">{key.charAt(4).toUpperCase()}</div>
+			<Keys {keys}/>
 		</div>
-		{:else}
-		<div class="tile">Empty arr error</div>
-		{/each}
-		<div>{cnt}</div>
 	</div>
 </main>
 
 <style>
-
 	.tiles {
 		display: flex;
 		justify-content: center;
-	}
-
-	.tile {
-		width: 50px;
-		height: 50px;
-		font-size: 40px;
-		text-align: center;
-		border: solid;
-
-		margin: 10px;
 	}
 </style>
