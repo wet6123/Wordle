@@ -5,7 +5,7 @@
 	let key = "";
 	let largeKey;
 	let keyCode;
-	let tileList = ["ABCDE", "ssafy"];
+	let tileList = ["     "];
 	let cnt = 0;
 
 	function handleKeydown(event) {
