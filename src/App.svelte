@@ -31,15 +31,6 @@
 		}
 	}
 
-	// function makeNewline(event) {
-	// 	key = event.key;
-	// 	keyCode = event.keyCode;
-	// 	if(keyCode = 13){
-	// 		if(keys[keys.length -1].length == 5){
-	// 			keys.push("")
-	// 		}
-	// 	}
-	// }
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
