@@ -7,7 +7,7 @@
 	let key = "";
 	let largeKey;
 	let keyCode;
-	let keys = ["ABCDE"];
+	let keys = ["ABCDE", "ssafy"];
 	let cnt = 0;
 
 	function handleKeydown(event) {
@@ -36,24 +36,19 @@
 		}
 	}
 
-	function checker(event){
+	// function checker(event){
 
-	}
+	// }
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
 
 <main>
 	<div >
-		<div class = "tiles">
-			<Keys {keys}/>
-		</div>
+		<Keys {keys} />
 	</div>
 </main>
 
 <style>
-	.tiles {
-		display: flex;
-		justify-content: center;
-	}
+	
 </style>
