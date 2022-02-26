@@ -3,7 +3,6 @@
     let capitalLetters = tile.toUpperCase();
 </script>
 
-
 {#each capitalLetters as letter}
 <div class="tile">
     {letter}
