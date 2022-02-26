@@ -1,13 +1,11 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
-	import KeyItem from './components/KeyItem.svelte';
-	import Keys from './components/Keys.svelte';
-
+	import Tiles from './components/Tiles.svelte';
 
 	let key = "";
 	let largeKey;
 	let keyCode;
-	let keys = ["ABCDE", "ssafy"];
+	let tileList = ["ABCDE", "ssafy"];
 	let cnt = 0;
 
 	function handleKeydown(event) {
@@ -16,8 +14,8 @@
 		keyCode = event.keyCode;
 
 		if(keyCode == 13){//input "Enter" => add new line
-			if(keys[keys.length -1].length == 5){
-				keys[keys.length] = "";
+			if(tileList[tileList.length -1].length == 5){
+				tileList[tileList.length] = "";
 				cnt = 0;
 			}
 			else{
@@ -26,13 +24,13 @@
 		}
 		else if(keyCode == 8 && cnt > 0){//keyCode 8 = 'Backspace'
 			cnt--;
-			keys[keys.length -1] = keys[keys.length -1].slice(0, -1)
-			// console.log(keys[keys.length -1])
+			tileList[tileList.length -1] = tileList[tileList.length -1].slice(0, -1)
+			// console.log(tileList[tileList.length -1])
 		}
 		else if((keyCode < 91 && keyCode > 64) && cnt < 5){
 			cnt++;
-			keys[keys.length -1] = keys[keys.length -1] + largeKey
-			// console.log(keys[keys.length -1])
+			tileList[tileList.length -1] = tileList[tileList.length -1] + largeKey
+			// console.log(tileList[tileList.length -1])
 		}
 	}
 
@@ -45,7 +43,7 @@
 
 <main>
 	<div >
-		<Keys {keys} />
+		<Tiles {tileList} />
 	</div>
 </main>
 
